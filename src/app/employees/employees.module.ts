@@ -6,10 +6,27 @@ import { EmployeeListComponent } from './employee-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeListItemComponent } from './employee-list-item.component';
 import { EmployeeFullNamePipe } from './employee-full-name.pipe';
+import { EmployeeDetailsDialogComponent } from './employee-details-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
-  declarations: [EmployeeListComponent, EmployeeListItemComponent, EmployeeFullNamePipe],
-  imports: [CommonModule, MatListModule, MatDialogModule, HttpClientModule],
-  exports: [EmployeeListComponent, EmployeeListItemComponent],
+  declarations: [
+    EmployeeListComponent,
+    EmployeeListItemComponent,
+    EmployeeFullNamePipe,
+    EmployeeDetailsDialogComponent,
+  ],
+  imports: [
+    CommonModule,
+    MatListModule,
+    MatDialogModule,
+    HttpClientModule,
+    MatButtonModule,
+  ],
+  exports: [
+    EmployeeListComponent,
+    EmployeeListItemComponent,
+    EmployeeDetailsDialogComponent,
+  ],
 })
 export class EmployeesModule {}
 

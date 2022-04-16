@@ -1,6 +1,6 @@
 import { Employee, EMPLOYEE_API } from './employees.module';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
     <mat-list>
       <ng-container *ngFor="let item of employees | async">
-        <mat-list-item class="hover:bg-gray-100">
+        <mat-list-item class="hover:bg-gray-100 cursor-pointer">
           <app-employee-list-item [employee]="item"></app-employee-list-item>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -26,7 +26,7 @@ import { HttpClient } from '@angular/common/http';
   ],
 })
 export class EmployeeListComponent implements OnInit {
-  employees: Observable<Employee[]> | null = null;
+  employees: Observable<Employee[]> = of([]);
 
   constructor(private http: HttpClient) {}
 
