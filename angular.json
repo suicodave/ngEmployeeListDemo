@@ -14,7 +14,8 @@
                     "export": true,
                     "inlineTemplate": true,
                     "inlineStyle": true,
-                    "displayBlock": true
+                    "displayBlock": true,
+                    "skipTests": true
                 }
             },
             "root": "",
