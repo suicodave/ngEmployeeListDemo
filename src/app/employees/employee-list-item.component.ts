@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
   selector: 'app-employee-list-item',
   template: `
     <div class="flex items-center h-full">
-      <img [src]="employee.imageUrl" class="rounded-full h-10  w-10  mr-4" alt="" /><span>{{
+      <img [src]="employee.imageUrl" class="rounded-full h-10  w-10  mr-8" alt="" /><span class="text-gray-700">{{
         employee | employeeFullName
       }}</span>
     </div>

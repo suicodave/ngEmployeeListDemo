@@ -8,6 +8,7 @@ import { EmployeeListItemComponent } from './employee-list-item.component';
 import { EmployeeFullNamePipe } from './employee-full-name.pipe';
 import { EmployeeDetailsDialogComponent } from './employee-details-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     EmployeeListComponent,
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     HttpClientModule,
     MatButtonModule,
+    MatCardModule,
   ],
   exports: [
     EmployeeListComponent,

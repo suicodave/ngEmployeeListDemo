@@ -5,7 +5,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-employee-details-dialog',
   template: `
-    <h2 mat-dialog-title>
+    <h2 mat-dialog-title class="text-blue-700">
       {{ data | employeeFullName }}
     </h2>
     <mat-dialog-content>

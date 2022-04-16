@@ -6,16 +6,23 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-employee-list',
   template: `
-    <h2 class="text-blue-700">My Employees</h2>
-
-    <mat-list>
-      <ng-container *ngFor="let item of employees | async">
-        <mat-list-item class="hover:bg-gray-100 cursor-pointer">
-          <app-employee-list-item [employee]="item"></app-employee-list-item>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </ng-container>
-    </mat-list>
+    <mat-card class="px-0 rounded-lg mat-elevation-z3">
+      <mat-card-title class="px-4">
+        <h2 class="text-blue-700">My Employees</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <ng-container *ngFor="let item of employees | async; last as isLast">
+            <mat-list-item class="hover:bg-gray-100 cursor-pointer">
+              <app-employee-list-item
+                [employee]="item"
+              ></app-employee-list-item>
+            </mat-list-item>
+            <mat-divider *ngIf="!isLast"></mat-divider>
+          </ng-container>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
   `,
   styles: [
     `
