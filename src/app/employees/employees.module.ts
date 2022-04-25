@@ -54,4 +54,3 @@ export interface Employee {
   address: string;
 }
 
-export const EMPLOYEE_API: string = 'https://hub.dummyapis.com/employee';

@@ -1,7 +1,8 @@
-import { Employee, EMPLOYEE_API } from './employees.module';
+import { Employee } from './employees.module';
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-employee-list',
@@ -35,13 +36,13 @@ import { HttpClient } from '@angular/common/http';
 export class EmployeeListComponent implements OnInit {
   employees: Observable<Employee[]> = of([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.employees = this.getEmployees();
   }
 
   getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(EMPLOYEE_API);
+    return this.http.get<Employee[]>(environment.api);
   }
 }
